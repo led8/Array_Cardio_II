@@ -15,10 +15,39 @@ const people = [
 
 // Some and Every Checks
     // Array.prototype.some() // is at least one person 19 or older?
+    const isAdult = people.some(function(person){
+      const currentDate = new Date;
+      const currentYear = currentDate.getFullYear();
+      const diff = currentYear - person.year;
+
+      return  diff >= 19 ? true : false;
+    });
+    console.log(isAdult);
+
     // Array.prototype.every() // is everyone 19 or older?
+    const allAdult = people.every(function(person){
+      const currentDate = new Date;
+      const currentYear = currentDate.getFullYear();
+      const diff = currentYear - person.year;
+
+      return  diff >= 19 ? true : false;
+    });
+    console.log(allAdult);
+
     // Array.prototype.find()
-    // Find is like filter, but instead returns just the one you are looking for
-    // find the comment with the ID of 823423
+      // Find is like filter, but instead returns just the one you are looking for
+      // find the comment with the ID of 823423
+      const id = comments.find(function(comment){
+        return comment.id > 800000;
+      });
+      console.log(id.id);
     // Array.prototype.findIndex()
-    // Find the comment with this ID
-    // delete the comment with the ID of 823423
+      // Find the comment with this ID
+      // delete the comment with the ID of 823423
+      const deleteId = comments.findIndex(function(comment){
+        return comment.id === 823423;
+      });
+      // delete comments[1]; OR
+      comments.splice(deleteId, 1);
+      console.log(comments);
+
