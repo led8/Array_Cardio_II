@@ -1,0 +1,6 @@
+p {
+  position: absolute;
+  top: 20%;
+  right: 50%;
+  transform: translateX(50%);
+}
